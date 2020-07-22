@@ -154,46 +154,74 @@
 								</header>
 								<center> <iframe width="560" height="315" src="https://www.youtube.com/embed/zLLduJHffiA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</center> <br>
-									<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Duis pretium velit ac mauris. Proin eu wisi suscipit nulla suscipit interdum. Aenean lectus lorem, imperdiet at, ultrices eget, ornare et, wisi. Pellentesque adipiscing purus ac magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque pede. Donec pulvinar ullamcorper metus. In eu odio at lectus pulvinar mollis. Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed blandit. Phasellus pellentesque, ante nec iaculis lobortis lorem mauris quis nunc.</p>
-								<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Duis pretium velit ac mauris. Proin eu wisi suscipit nulla suscipit interdum. Aenean lectus lorem, imperdiet at, ultrices eget, ornare et, wisi. Pellentesque adipiscing purus ac magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque pede. Donec pulvinar ullamcorper metus. In eu odio at lectus pulvinar mollis. Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-								<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Duis pretium velit ac mauris. Proin eu wisi suscipit nulla suscipit interdum. Aenean lectus lorem, imperdiet at, ultrices eget, ornare et, wisi. Pellentesque adipiscing purus ac magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque pede. Donec pulvinar ullamcorper metus. In eu odio at lectus pulvinar mollis. Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Nulla facilisi. Cum sociis natoque penatibus. Sed blandit. Phasellus pellentesque.</p>
-							</section>
+								<form id="form1">
+
+									<center> <h2> The Quiz for Today's lesson! </h2> </center><br>
+									<h3>What is being a delegate?</h3>
+									<label for="var_string"><input type="radio" name="variable" value="1" id="var_string" />Representing a country to solve issues. </label>
+									<br><label for="var_join"><input type="radio" name="variable" value="0" id="var_join" />Destroying the lives of every other delegate.</label>
+									<br><label for="var_info"><input type="radio" name="variable" value="0" id="var_info" />Making committee boring.</label>
+									<br><label for="var_condition"><input type="radio" name="variable" value="0" id="var_condition"/>Ok.</label>
+									<br> <br>
+									<h3>Is Sneha Sahay SG?</h3>
+									<br><label for="sub_string"><input type="radio" name="sub" value="1" id="sub_string"/>Yes</label>
+									<br><label for="sub_join"><input type="radio" name="sub" value="0" id="sub_join"/>No</label>
+									<br><label for="sub_info"><input type="radio" name="sub" value="0" id="sub_info" />Also no</label>
+									<br><label for="sub_condition"><input type="radio" name="sub" value="0" id="sub_condition" />Also Also no</label>
+									<br> <br>
+									<h3>Which is the best description of concatenation?</h3>
+									<br><label for="cat_string"><input type="radio" name="con" value="0" id="cat_string" />Identifies a portion of a string.</label>
+									<br><label for="cat_join"><input type="radio" name="con" value="1" id="cat_join" />A method to join strings.</label>
+									<br><label for="cat_info"><input type="radio" name="con" value="0" id="cat_info" />Allows you to store information so it can be reused throughout the program</label>
+									<br><label for="cat_condition"><input type="radio" name="con" value="0" id="cat_condition" />Allows you to make a decision based on a condition.</label>
+									<br> <br>
+									<h3>Which is the best description of an if statement?</h3>
+									<br><label for="if_string"><input type="radio" name="ifstate" value="0" id="if_string" />Identifies a portion of a string.</label>
+									<br><label for="if_join"><input type="radio" name="ifstate" value="0" id="if_join" />A method to join strings.</label>
+									<br><label for="if_info"><input type="radio" name="ifstate" value="0" id="if_info" />Allows you to store information so it can be reused throughout the program</label>
+									<br><label for="if_condition"><input type="radio" name="ifstate"  value="1" id="if_condition" />Allows you to make a decision based on a condition.</label>
+									<br> <br>
+									<button type="submit" value="Submit">Submit</button>
+									
+									</form>
+									<p><span id="grade">  </span></p>
+					<p id="grade2"></p>
+				
+					<script>
+						document.getElementById("form1").onsubmit=function() {
+							   variable = parseInt(document.querySelector('input[name = "variable"]:checked').value);
+							   sub = parseInt(document.querySelector('input[name = "sub"]:checked').value);
+							   con = parseInt(document.querySelector('input[name = "con"]:checked').value);
+							   ifstate = parseInt(document.querySelector('input[name = "ifstate"]:checked').value);
+							   
+							   result = 100*(variable + sub + con + ifstate)/4;
+
+							document.getElementById("grade").innerHTML = "Your results are: " +result + "%";
+
+
+if (result < 75) {result2 = "Please go over the content and section material and redo the test."};
+if (result >= 75) {result2 = "Please advance to the next section of the course."};
+document.getElementById("grade2").innerHTML = result2; 
+
+
+						return false; // required to not refresh the page; just leave this here
+						} //this ends the submit function
+						
+
+
+						</script>
+<embed src="DIAMUN.pdf" width="700px" height="1000px" />
+
+						
+							<!-- Team -->
+							
+					</section>
 						</div>
 					</div>
 				</div>
 			</div>
 		
-		<!-- Team -->
-			<div class="wrapper style5">
-				<section id="team" class="container">
-					<header class="major">
-						<h2>Cras vitae metus aliNuam</h2>
-						<span class="byline">pulvinar mollis. Vestibulum sem magna, elementum vestibulum arcu</span>
-					</header>
-					<div class="row">
-						<div class="3u">
-							<a href="#" class="image"><img src="images/placeholder.png" alt=""></a>
-							<h3>Molly Millions</h3>
-							<p>In posuere eleifend odio quisque semper augue wisi ligula.</p>
-						</div>
-						<div class="3u">
-							<a href="#" class="image"><img src="images/placeholder.png" alt=""></a>
-							<h3>Henry Dorsett Case</h3>
-							<p>In posuere eleifend odio quisque semper augue wisi ligula.</p>
-						</div>
-						<div class="3u">
-							<a href="#" class="image"><img src="images/placeholder.png" alt=""></a>
-							<h3>Willis Corto</h3>
-							<p>In posuere eleifend odio quisque semper augue wisi ligula.</p>
-						</div>
-						<div class="3u">
-							<a href="#" class="image"><img src="images/placeholder.png" alt=""></a>
-							<h3>Linda Lee</h3>
-							<p>In posuere eleifend odio quisque semper augue wisi ligula.</p>
-						</div>
-					</div>
-				</section>
-			</div>
+		
 
 	<!-- Footer -->
 	<div id="footer">
@@ -213,9 +241,10 @@
 		
 		<!-- Copyright -->
 			<div id="copyright">
-				Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+				© DIAMUN. All rights reserved. Original Design by TEMPLATED!
 			</div>			
 	</div>
+
 
 	</body>
 </html>
